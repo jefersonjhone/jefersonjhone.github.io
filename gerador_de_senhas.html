@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>space input</title>
+</head>
+<body>
+    <main>
+        
+        <div class="main">
+            <div class="check">
+                <h2>Quais caracteres deseja incluir na senha?</h2>
+                <div class="campo">
+                    
+                    <input name="maiusculas" id="maiusculas" type="checkbox">
+                    <label for="maiusculas">maiusculas</label>
+                </div>
+                <div class="campo">
+                    <input name="minusculas" id="minusculas" type="checkbox">
+                    <label for="minusculas">minusculas</label>
+                </div>
+                <div class="campo">
+                
+                    <input name="caracteres" id="caracteres" type="checkbox">
+                    <label for="caracteres">caracteres especiais</label>
+                </div>
+                <div class="campo">
+                    
+                    <input name="numeros" id="numeros" type="checkbox">
+                    <label for="numeros">números</label>
+                </div>
+            </div>
+            <div class="tamanho">
+
+                <h2>tamanho na senha</h2>
+                <input type="range" name="range" id="range" value="" maxlength="16" minlength="5" step="1">
+                <label for="range">minimo : 7 máximo: 16</label>
+            </div>
+            <section class="copy">
+
+                <div class="textarea">
+                    
+                    <code>
+                        <span id="texto"></span>
+                    </code>
+                </div>
+                <button id="btncopy" onclick="copiar()"></button>
+            </section>
+        </div>
+    </main>
+    </body>
+    <script src="./script.js"></script>
+    </html>
