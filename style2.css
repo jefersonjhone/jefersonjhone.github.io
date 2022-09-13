@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 500px;
+}
+main{
+    background: linear-gradient(90deg,white,rgb(79, 79, 79));
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.main{
+    border-radius: 25px;
+    margin: 10% auto;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 60%;
+    width: 40%;
+    display: flex;
+    background:linear-gradient(90deg,rgba(210, 164, 245, 0.706),rgba(126, 65, 172, 0.706),rgba(67, 9, 111, 0.706));
+    flex-direction: column;
+    align-items: center;
+    border:1px solid rgb(200, 194, 194) ;
+    box-shadow: 40px 20px 70px rgba(67, 9, 111, 0.857);
+    justify-content: center;
+    
+
+}
+#range{
+    border: none;
+    color: black;
+    margin: 10px;
+    background-color: black;
+}
+#range:hover{
+    color: aquamarine;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.check{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0%;
+    align-items: center;
+}
+.check h2{
+    margin-bottom: 10%;
+    color: aliceblue;
+    text-align: center;
+    margin-top:0;
+}
+.campo{
+    cursor: pointer;
+    margin: 10px;
+    color: rgb(249, 249, 249);
+    background-color: rgba(79, 30, 124, 0.519);
+    border-radius: 5px;
+    padding: 5px;
+    padding: 5px;
+    transition: all .4s;
+    
+}
+.campo:hover{
+    transition: .1s;
+    transition-delay: .1s;
+    border: 1px solid white;
+    transform: scale(1.2);
+}
+.campo label{
+    user-select: none;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;
+    height:100%;
+    margin-left: 5px;
+}
+.campo input{
+    cursor: pointer;   
+}
+label{
+    font-size: 1.4rem;
+}
+span{
+    font-size: 1.2rem;
+    font-family:monospace;
+
+}
+.tamanho{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -1;
+    position: relative;
+    transition: all 2s;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    transition: all .3s;
+    color: rgb(44, 24, 54);
+    display: none;
+   
+    
+    
+}
+.textarea{
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 70%;
+    height: 100px;
+    font-weight: 900;
+    font-style: oblique;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+button{
+    width: 30px;
+    height:30px;
+    background: url(./copiar-documentos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    display: none;
+
+
+}
+button:hover{
+    transform: scale(2);
+    transition: all .3s;
+    background-color: rgb(255, 243, 243);
+    padding: 10px;
+    border-radius: 50%;
+}
+code span{
+    color: aliceblue;
+
+}
+.visivel{
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+    position:relative;
+}
+.red{
+    background-color: rgba(255, 0, 0, 0.509);
+
+}
+.copy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-left: 0;
+}
+
+@media (max-width:600px){
+    .main{
+        background-color: aliceblue;
+        width: 80%;
+        height: 80%;
+        font-size: 14px;
+
+    }
+    
+}
+@media (max-height:900px){
+    .main{
+        height: 80%;
+        background-color: red;
+        font-size: 12px;
+    }
+    .checked{
+        padding: 0px;
+        font-size: 10px;
+    }
+    .checked label{
+        padding: 0px;
+        font-size: 10px;
+    }
+    .textarea{
+        height: 70px;
+        height: 60%;
+        background-color: rgba(240, 248, 255, 0.674);
+        margin-bottom: 10px;
+    }
+    .tamanho{
+        padding: 5px;
+        margin: 0px;
+        text-align: center;
+
+    }
+    .copy{
+        width: 100%;
+        height: 15%;
+        margin-bottom: 0px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .campo{
+        padding: 2px;
+        margin: 5px;
+    }
+    .campo label{
+        margin-left: 0px;
+    }
+    #btncopy{
+        height: 50%;
+    }
+}
