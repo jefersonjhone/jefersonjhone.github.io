@@ -63,7 +63,6 @@ main {
 }
 main .home .back{
     z-index: -1;
-    background-color: black;
     background: linear-gradient(90deg,rgb(0, 225, 255),purple);
     position:absolute;
     left: 50%;
@@ -176,13 +175,13 @@ main .projetos{
     height: 100vh;
     max-width: 80vw;
     width:70%;
-
+    
 }
 main .projetos .shape{
     z-index: -1;
     position: absolute;
     left: 20%;
-
+    
 }
 main .projetos .label{
     font-size: 2rem;
@@ -225,8 +224,9 @@ main .projetos .grid .row .project  {
     width: 250px;
     height: 250px;
     margin: 20px;
-    background-color: rgb(199, 199, 199);
-    
+    background-color: rgba(199, 199, 199, 0.432);
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
     box-shadow: 30px 10px 40px;
     border-radius: 15px;
     display: flex;
@@ -248,13 +248,34 @@ main .projetos .grid .row_right{
     }
 }
 main .projetos .grid .row .project .image{
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: rgba(29, 1, 29, 0.411);
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    height: 60%;
+}
+main .projetos .grid .row .project:hover{
+    transform: scale(1.2);
+}
+main .projetos .grid .row .project .about{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+main .projetos .grid .row .project .about h5{
+    font-size: 1rem;
+    font-weight: 800;
+}
+main .projetos .grid .row .project .about p{
+    font-size: .9rem;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
 }
 main .projetos .grid .row .project .image img{
-    width: 105%;
-    width: 200px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     animation: rotate 1s infinite alternate;
     transition: all .1  s;
 }
@@ -268,6 +289,24 @@ main .skills{
     background:linear-gradient(90deg,purple,rgb(0, 255, 255));
     font-family: var(--font);
 }
+
+main .skills .tec {
+    width: 300px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0  ;
+    border:1px solid rgb(226, 226, 226);
+    border-radius: 15px;
+    background-color: rgb(128, 128, 128, 0.281);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
 main .skills .row {
     max-width: 70vw;
     display: flex;
@@ -275,11 +314,15 @@ main .skills .row {
     align-items: center;
     justify-content: center; 
 }
-main .skills .row .image{
+main .skills .tec .image{
+    margin: 15px;
     width: 100px;
     height: 100px;
 }
 main .skills .label{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 15px;
     font-size: 2.3rem;
     margin: 30px;
     background: linear-gradient(90deg,rgb(0, 225, 255),purple);
@@ -294,17 +337,41 @@ main .skills .label{
 
 }
 
-
-main .skills .row .about{
-    opacity: 0;
+@keyframes anim_subir {
+    to{
+        transform: translateY(110%);
+        transform: translateX(100%);
+        opacity: .7;
+        scale:.5;
+    }
+    
 }
-main .skills .row :hover .about{
+main .skills .tec .about{
+    display: flex;
+    flex-direction: column;
+    opacity: .6;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: rgba(240, 248, 255, 0.164);
+    height: 100%;
+}
+main .skills .tec .about h5{
+    font-size:1.2rem ;
+    text-align: center;
+}
+main .skills .tec:hover .image{
+    opacity: 1;
+    transform: scale(1.2);
+    animation: anim_subir .5s forwards;
+    height: 100%;
+}
+main .skills .tec:hover .about{
     opacity: 1;
     transform: scale(1.2);
 }
-main .skills .row .about{
+main .skills .tec .about{
 font-size: 1.3rem;
-color: aliceblue;
+color: aliceblue;   
 margin-bottom: 15px;
 }
 
@@ -362,4 +429,128 @@ footer section ul li img{
     width: 50px;
     background-color: aliceblue;
     border-radius: 25px;
+}
+
+
+
+@media (max-width:320px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    header{
+        width: 100%;
+        display: none;
+    }
+    header nav, header nav ul{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    /*header nav a {
+    }*/
+    main .home{
+        max-width: 100vw;
+        width: 100%;
+    }
+    main .home .content{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    main .home .content .image img, main .home .content .text{
+        width: 200px;
+    }
+    main .home .content .text .title span, main .home .content .text h1,main .home .content .text .desc, #talk_to_me{
+        font-size: 10px;
+    }
+    #talk_to_me{
+        width: 50%;
+        height: 50px;
+        border-radius: 20px;
+    }
+    main .projetos{
+        width: 100%;
+        height: auto;
+        max-width: 100vw;
+    }
+    main .projetos .label h2 {
+        font-size: 1.5rem;
+    }
+    main .projetos .grid{
+        overflow: hidden;
+    }
+    main .projetos .grid .row .project{
+        width: 140px;
+        height: 140px;
+        font-size: 10px;
+        margin: 10px;
+        padding: 10px;
+    }
+    main .skills {
+        width: 100%;
+    }
+    main .skills .tec {
+        width: 100px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0  ;
+        border:1px solid rgb(226, 226, 226);
+        border-radius: 15px;
+        background-color: rgb(128, 128, 128, 0.281);
+        backdrop-filter: blur(10px);
+    }
+    main .skills .tec :hover .about{
+        opacity: 1;
+    }
+    main .skills .label h2{
+        font-size: 1.5rem;
+    }
+    main .skills .row .image{
+        width: 30%;
+        height: 30%;
+    }
+    main .skills .row .about p{
+        font-size: 10px;
+        text-align: end;
+    }
+    /*animation: cair 2s infinite alternate;
+    @keyframes cair {
+        from{
+            
+            opacity: .4;
+        }
+        to{
+            transform: translateY(-100px);
+            transform: scale(1.3);
+        }
+        
+    }
+    main .skills .row .about h5{
+        font-size: 10px;
+    }*/
+    main .contatos {
+        width: 100%;    
+    }   
+    main .contatos form p{
+        font-size: 10px;
+    }
+    main .contatos form a{
+        font-size: 1.3rem;
+    }
+    footer section {
+        font-size: 10px;
+    }
+    footer section ul {
+        width: 100%;
+    }
+    footer section ul li a img{
+        width: 30px;
+
+    }
 }
